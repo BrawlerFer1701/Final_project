@@ -1,0 +1,358 @@
+.main {
+    width: 100%;
+    position: relative;
+    padding-bottom: 150px;
+    background: #081b27;
+    color: white;
+    margin-top: 80px;
+    &-top {
+        padding: 150px 150px 0;
+        width: 100%;
+        display: flex;
+        gap: 0 60px;
+        margin-bottom: 80px;
+        background-image: linear-gradient(0deg, $secondary-color, rgba(8, 27, 39, .8)), url(../imgs/congtuocchetchocvacohaugai.png);
+        background-size: auto, 100%;
+        background-position: 0 0, 0 -40px;
+        background-repeat: no-repeat;
+    }
+
+    &-img {
+        // height: 500px;
+        width: 350px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        img:hover {
+            box-shadow: 0 0 20px -8px #F4F4F4;
+        }
+    }
+
+    &-title {
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+
+        h2 {
+            font-size: 65px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+
+        i {
+            color: $yellow;
+            margin-right: 5px;
+        }
+
+        .item-rating {
+            margin-bottom: 25px;
+        }
+    }
+
+    &-button {
+        display: flex;
+        align-items: center;
+        gap: 0 25px;
+        margin-bottom: 15px;
+
+        a {
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+
+        }
+
+        .button-trailer {
+            background: #625EFD;
+        }
+
+        .button-watch {
+            background: #F22954;
+        }
+    }
+
+    &-info {
+        line-height: 2;
+
+    }
+
+    &-bottom {
+        text-align: justify;
+        color: #9cabb6;
+        margin-bottom: 70px;
+        
+        h3 {
+            color: $yellow;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-size: 34px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.content-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 0 30px;
+    margin-bottom: 70px;
+
+    input[type=search] {
+        flex: 1;
+        outline: none;
+        border: none;
+        padding: 15px;
+        font-size: unset;
+        border-radius: 10px 0 0 10px;
+    }
+
+    button {
+        flex-shrink: 0;
+        cursor: pointer;
+        padding: 15px;
+        outline: none;
+        border: none;
+        background: #3898ec;
+        color: white;
+        font-size: unset;
+        font-weight: 600;
+        border-radius: 0 10px 10px 0;
+    }
+}
+
+.film-hot {
+    width: 100%;
+
+    h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: $yellow;
+    }
+
+    &-items {
+        width: 80%;
+        height: 530px;
+        margin: 0 auto;
+        display: flex;
+        gap: 0 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding: 10px 0;
+        cursor: pointer;
+    }
+}
+.film{
+    &-item{
+        width: 350px;
+        height: 100%;
+        border-radius: 10px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: red;
+        .hot-img {
+            width: 350px;
+            height: 100%;
+            border-radius: inherit;
+            background: yellow;
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: inherit;
+                // object-fit: cover;
+            }
+        }
+        .hot-img:hover ~ .film-cap{
+            opacity: 1;
+            visibility: visible;
+        }
+        .hot-img:hover ~ .item-mask{
+            opacity: 0.8;
+            visibility: visible;
+        }
+    }
+    &-cap {
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+        position: absolute;
+        width: 300px;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 30px;
+        h3 {
+            color: $yellow;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.6;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+            // width: 150px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    &-rating {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        .fa {
+            font-size: 15px;
+            color: #DDE162;
+
+        }
+    }
+}
+.item-mask{
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient($secondary-color, black);
+            position: absolute;
+            z-index: 1;
+            border-radius: inherit;
+            opacity: 0;
+            visibility: hidden;
+            transition: .5s;
+        }
+.film-trailer{
+    width: 800px;
+    height: 450px;
+}
+
+@media screen and (max-width:768px) {
+    .main-title h2 {
+        font-size: 50px;
+    }
+
+    .main-top {
+        width: 100%;
+        padding: 70px 50px 0;
+        gap: 0 40px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 25px;
+    }
+    .film-trailer{
+        width: 450px;
+        height: 350px;
+    }
+}
+
+
+@media screen and (max-width: 376px) {
+    .main {
+        width: 100%;
+        padding-bottom: 60px;
+        &-img {
+            width: 100%;
+            margin-bottom: 20px;
+
+            img {
+                width: 100%;
+                border-radius: inherit;
+            }
+        }
+
+        &-title {
+            width: 100%;
+
+            h2 {
+                font-size: 24px;
+                // margin-bottom: 10px;
+            }
+
+            h2,
+            .item-rating,
+            &-button,
+            &-info {
+                margin-bottom: 15px;
+            }
+        }
+
+        &-bottom {
+
+            h3,
+            h4,
+            p {
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h4 {
+                font-size: 25px;
+            }
+        }
+
+        &-top {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 30px 30px 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 25px;
+    }
+
+    .content-search {
+        margin-bottom: 40px;
+        height: 50px;
+        font-size: 13px;
+        padding: 0 15px;
+    }
+    .film-hot{
+    	&-items{
+    		height: 430px;
+    	}
+    	.hot-img{
+    		width: 200px;
+    	}
+    	.film-cap{
+    		width: 100px;
+    	}
+    }
+    .film-trailer{
+        width: 300px;
+        height: 150px;
+    }
+}
