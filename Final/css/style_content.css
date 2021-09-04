@@ -411,6 +411,7 @@ input[type=checkbox] {
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 0 30px;
+  transition: .25s;
 }
 
 .film-cap h3 {
@@ -454,12 +455,20 @@ input[type=checkbox] {
   border-radius: inherit;
   opacity: 0;
   visibility: hidden;
-  transition: .5s;
+  transition: .25s;
 }
 
 .film-trailer {
-  width: 800px;
+  width: 700px;
   height: 450px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.film-trailer iframe {
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 768px) {
